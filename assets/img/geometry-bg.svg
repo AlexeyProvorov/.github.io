@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
-    <circle cx="960" cy="540" r="400" stroke="rgba(255,255,255,0.1)" stroke-width="2" fill="none" />
-    <line x1="0" y1="0" x2="1920" y2="1080" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
-    <line x1="1920" y1="0" x2="0" y2="1080" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
-    <polygon points="480,540 1440,1080 1440,0" stroke="rgba(255,255,255,0.1)" stroke-width="2" fill="none" />
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+    <rect width="1920" height="1080" fill="none" stroke="#ffffff" stroke-width="1" />
+    <circle cx="960" cy="540" r="520" stroke="#ffffff" stroke-width="1" fill="none" opacity="0.2"/>
+    <line x1="0" y1="540" x2="1920" y2="540" stroke="#ffffff" stroke-width="0.5" opacity="0.2"/>
+    <line x1="960" y1="0" x2="960" y2="1080" stroke="#ffffff" stroke-width="0.5" opacity="0.2"/>
 </svg>
