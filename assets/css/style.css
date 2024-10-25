@@ -1,33 +1,57 @@
-/* Анимированный фон */
+/* Общие стили */
 body {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-    color: white;
-    background: linear-gradient(270deg, #ff7e5f, #feb47b, #86a8e7, #91eae4);
-    background-size: 600% 600%;
-    animation: gradient 10s ease infinite;
+    font-family: 'Roboto Mono', monospace;
+    color: #fff;
+    background-color: #0d0d0d;
     height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #0d0d0d, #232526);
+    overflow-x: hidden;
 }
 
-@keyframes gradient {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+/* Анимированный фон */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.5), transparent 70%);
+    z-index: 1;
+    opacity: 0.8;
+}
+
+body::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('assets/img/geometry-bg.svg');
+    z-index: 0;
+    opacity: 0.15;
+    background-size: cover;
+    background-position: center;
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    padding: 2rem;
     text-align: center;
 }
 
 header h1 {
     font-size: 3rem;
     margin-bottom: 0.5rem;
+    color: #00ff99;
 }
 
 header p {
@@ -47,16 +71,17 @@ nav ul li {
 }
 
 nav ul li a {
-    color: white;
+    color: #00ff99;
     text-decoration: none;
     font-size: 1.2rem;
     padding: 5px 10px;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 nav ul li a:hover {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(0, 255, 153, 0.2);
+    color: #fff;
 }
 
 section {
@@ -66,11 +91,13 @@ section {
 section h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
+    color: #00ccff;
 }
 
 article h3 {
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
+    color: #ffcc00;
 }
 
 article p {
@@ -86,7 +113,7 @@ article a {
 }
 
 article a:hover {
-    color: white;
+    color: #fff;
 }
 
 footer {
