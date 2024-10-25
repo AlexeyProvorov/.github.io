@@ -10,7 +10,6 @@ body {
     position: relative;
 }
 
-/* Анимированный фон с градиентом и подсветкой */
 body::before {
     content: "";
     position: fixed;
@@ -18,11 +17,12 @@ body::before {
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 20%, rgba(20, 18, 56, 0.7) 60%, rgba(20, 18, 56, 0.95) 100%);
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 20%, rgba(255, 255, 255, 0.05) 50%, rgba(20, 18, 56, 0.8) 100%);
     background-size: 200% 200%;
     z-index: -1;
     animation: colorCycle 20s ease-in-out infinite, glowMove 15s ease-in-out infinite;
 }
+
 
 
 @keyframes glowMove {
