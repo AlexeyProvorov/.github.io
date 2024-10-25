@@ -4,12 +4,13 @@ body {
     padding: 0;
     font-family: 'Roboto', sans-serif;
     color: #f0f0f0;
-    background: #4a216b;
+    background: #371f63;
     overflow-x: hidden;
     min-height: 100vh;
+    position: relative;
 }
 
-/* Анимированный фон */
+/* Анимированный фон с градиентом и подсветкой */
 body::before {
     content: "";
     position: fixed;
@@ -17,18 +18,29 @@ body::before {
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle, rgba(36, 54, 80, 0.9), #0e0a52);
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 20%, rgba(20, 18, 56, 0.7) 60%, rgba(20, 18, 56, 0.95) 100%);
+    background-size: 200% 200%;
     z-index: -1;
-    animation: backgroundMove 10s linear infinite;
+    animation: colorCycle 20s ease-in-out infinite, glowMove 15s ease-in-out infinite;
 }
 
-@keyframes backgroundMove {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+
+@keyframes glowMove {
+    0% { background-position: 50% 50%; }
+    50% { background-position: 55% 55%; }
+    100% { background-position: 50% 50%; }
 }
 
-/* Добавим визуальные элементы: точки и сетки */
+/* Плавное изменение цвета фона */
+@keyframes colorCycle {
+    0% { background-color: #16091d; }
+    25% { background-color: #0e0f2b; }
+    50% { background-color: #16393a; }
+    75% { background-color: #091a0e; }
+    100% { background-color: #190a20; }
+}
+
+/* Анимация сетки */
 body::after {
     content: "";
     position: fixed;
@@ -36,11 +48,27 @@ body::after {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('assets/img/geometry-pattern.svg'); /* Здесь SVG-фон с сеткой */
-    opacity: 0.2;
+    background-image: url('assets/img/geometry-pattern.svg');
+    opacity: 0.15; /* Уменьшена яркость сетки */
     z-index: -1;
     background-size: cover;
     background-position: center;
+    animation: gridMove 30s linear infinite;
+}
+
+@keyframes gridMove {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 100% 100%; }
+}
+
+/* Canvas для частиц */
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
 }
 
 /* Контейнер страницы */
@@ -57,7 +85,7 @@ header h1 {
     font-size: 4rem;
     font-family: 'Source Code Pro', monospace;
     margin: 0.5rem 0;
-    color: #00ccff;
+    color: #10aef7;
     animation: fadeInDown 1.5s ease-out;
 }
 
@@ -101,7 +129,6 @@ nav ul li a:hover {
     color: #fff;
 }
 
-/* Стили для секций */
 section {
     margin-bottom: 3rem;
     padding: 0 15px;
@@ -133,28 +160,6 @@ section h2 {
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.5);
 }
 
-.project-item h3 {
-    font-size: 1.5rem;
-    color: #ff9933;
-}
-
-.project-item p {
-    font-size: 1rem;
-    margin: 0.5rem 0;
-}
-
-.project-item a {
-    text-decoration: none;
-    color: #00ccff;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-.project-item a:hover {
-    color: #ffcc00;
-}
-
-/* Футер */
 footer {
     margin-top: auto;
     font-size: 0.9rem;
