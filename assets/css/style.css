@@ -4,7 +4,7 @@ body {
     padding: 0;
     font-family: 'Roboto', sans-serif;
     color: #f0f0f0;
-    background: #0a0a0a;
+    background: #4a216b;
     overflow-x: hidden;
     min-height: 100vh;
 }
@@ -17,7 +17,7 @@ body::before {
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle, rgba(0,0,0,0.9), #0a0a0a);
+    background: radial-gradient(circle, rgba(36, 54, 80, 0.9), #0e0a52);
     z-index: -1;
     animation: backgroundMove 10s linear infinite;
 }
